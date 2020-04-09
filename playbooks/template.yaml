@@ -1,0 +1,7 @@
+---
+- name: My First playbook
+  hosts: localhost
+  become: true
+  become_method: sudo
+  tasks:
+  - name:
