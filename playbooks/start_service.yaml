@@ -35,7 +35,7 @@
       state: started
     ignore_error: true
 
- - name: Stop Mariadb
+  - name: Stop Mariadb
     when: (ansible_distribution == "CentOS" and ansible_distribution_major_vrsion == "7")
     systemd: started
       name: mariadb
