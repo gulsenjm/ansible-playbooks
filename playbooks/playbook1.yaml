@@ -3,8 +3,24 @@
   hosts: all
   become: true
   become_method: sudo
+  user: centos
   tasks:
   - name: Install package
     package:
       name: httpd
       state: installed
+
+  - name: Install Telnet
+    package:
+      name: telnet
+      state: installed
+
+  - name: Add Bob
+    package:
+      name: httpd
+      state: absent
+    
+  - name: Add Tom
+    package:
+      name: tom
+      state: present
