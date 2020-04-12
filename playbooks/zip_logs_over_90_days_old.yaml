@@ -1,5 +1,5 @@
 ---
-- name: Zips logs over 100M
+- name: Zip logs over 100M
   hosts: all
   become: true
   become_method: sudo
