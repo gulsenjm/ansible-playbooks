@@ -13,6 +13,7 @@
       state: stopped
     ignore_error: true
 
+ 
   - name: Stop r1soft on CentOS 6
     when: (ansible_distribution == "CentOS" and ansible_distribution_major_vrsion == "6")
     systemd:
