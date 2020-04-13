@@ -6,7 +6,7 @@
   user: centos
   ignore_errors: true
   tasks:
-  - name: Install httpd
+  - name: Install package
     sustemd:
     package:
       name: httpd
