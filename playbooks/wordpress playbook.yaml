@@ -1,0 +1,51 @@
+---
+- name: Install wordpress
+  hosts: all
+  become: true
+  become_method: sudo
+  user: centos
+  tasks:
+  - name: Install package
+    package:
+      name: httpd
+      state: installed
+
+  - name: Install Mariadb
+    package:
+      name: mariadb-server
+      state: installed
+
+  - name: Install Mysql
+    package:
+      name: mysql
+      state: installed
+
+  - name: Install php
+    package:
+      name: php
+      state: installed
+
+  - name: Install wget
+    package:
+      name: wget
+      state: installed                  
+
+  - name: Add Bob
+    package:
+      name: httpd
+      state: present
+    
+  - name: Add Ben
+    package:
+      name: httpd
+      state: present
+
+  - name: Add Lisa
+    package:
+      name: httpd
+      state: present
+    
+  - name: Add Katty
+    package:
+      name: httpd
+      state: present
