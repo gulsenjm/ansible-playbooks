@@ -4,31 +4,44 @@
   become: true
   become_method: sudo
   user: centos
+  ignore_errors: true
   tasks:
-  - name: Install package
+  - name: Install httpd
+    sustemd:
     package:
       name: httpd
-      state: installed
+      state: latest
+    ignore errors: true
 
   - name: Install Mariadb
     package:
       name: mariadb-server
       state: installed
+    ignore errors: true
 
   - name: Install Mysql
     package:
       name: mysql
       state: installed
+    ignore errors: true
 
   - name: Install php
     package:
       name: php
       state: installed
+    ignore errors: true
+
+  - name: Install php-mysql
+    package:
+      name: php-mysql
+      state: lateset
+    ignore errors: true
 
   - name: Install wget
     package:
       name: wget
-      state: installed                  
+      state: installed   
+    ignore errors: true                 
 
   - name: Add Bob
     package:
