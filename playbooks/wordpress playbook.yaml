@@ -1,6 +1,6 @@
 ---
 - name: Install wordpress
-  hosts: all
+  hosts: 3.10.71.223
   become: true
   become_method: sudo
   user: centos
