@@ -1,0 +1,44 @@
+---
+- name: Update packages (this is equivalent to yum update -y)
+  yum: 
+  name:  
+  state: latest
+
+  - name: Install dependencies for WordPress
+    yum:
+      name:
+          - php
+          - php-mysql
+          - MySQL-python
+      state: present
+
+  - name: Ensure MariaDB is running (and enable it at boot)
+    service: name=mariadb state=started enabled=yes
+
+  - name: Copy ~/.my.cnf to nodes
+    copy: src=.my.cnf dest=/root/.my.cnf
+  - name: Create MariaDB database
+    mysql_db: name={{ wp_mysql_db }} state=present
+
+  - name: Create MariaDB username and password
+    mysql_user: login_user=root login_password=root name="{{ wp_mysql_user }}" password="{{ wp_mysql_password }}" priv=*.*:ALL                
+
+  - name: Add Bob
+    package:
+      name: httpd
+      state: present
+    
+  - name: Add Ben
+    package:
+      name: httpd
+      state: present
+
+  - name: Add Lisa
+    package:
+      name: httpd
+      state: present
+    
+  - name: Add Katty
+    package:
+      name: httpd
+      state: present
