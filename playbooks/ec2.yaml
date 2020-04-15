@@ -1,0 +1,19 @@
+---
+- name: Create ec2-instance
+  hosts: localhost
+  become: true
+  become_method: sudo
+  gather_facts: False
+  tasks:
+  - name: Launch instance
+    ec2:
+      key_name: bastion
+      instance_type: t2.medium
+      image: ami-0cb790308f7591fa6
+      wait: true
+      region: eu-west-2
+      vpc_subnet_id: subnet-0a9b3b6e1bae6e9af
+      assign_public-ip: yes
+    register: ec2
+    
+
