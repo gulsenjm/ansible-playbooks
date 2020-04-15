@@ -15,5 +15,6 @@
       vpc_subnet_id: subnet-0a9b3b6e1bae6e9af
       assign_public-ip: yes
     register: ec2
+    ignore_error: true 
     
 
