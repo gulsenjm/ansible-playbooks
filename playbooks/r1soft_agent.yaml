@@ -22,7 +22,7 @@
     
 
 
-  - name: Start iptables
+  - name: Stop iptables
     when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "6") 
     service: 
       name: iptables
@@ -38,8 +38,8 @@
 
 
   handlers: 
-    - name: AGENT_RESTART
-      service: 
-        name: cdp-agent
-        state: restarted
-        enabled: true
+  - name: AGENT_RESTART
+    service: 
+      name: cdp-agent
+      state: restarted
+      enabled: true
