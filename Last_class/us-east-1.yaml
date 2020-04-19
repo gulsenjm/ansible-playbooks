@@ -1,0 +1,8 @@
+key_name: "ansible"
+instance_type: t2.micro
+image: "ami-0323c3dd2da7fb37d"
+group: "default"
+count: 5
+vpc_subnet_id: "subnet-0a81adf6e8b66f38b"
+assign_public_ip: yes 
+region: "us-east-1"

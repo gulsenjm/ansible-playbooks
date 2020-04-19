@@ -1,0 +1,48 @@
+---
+- hosts: localhost
+  tasks:
+  - name: associate subnet to the VPC
+    ec2_vpc_subnet:
+      state: present
+      region: us-east-1
+      vpc_id: vpc-0f488eae7b93f4b10
+      cidr: 10.0.1.0/24
+      map_public: yes
+      tags:
+        Name: Group_task Public-Subnet1
+      internet_gateway: true
+
+
+  - name: associate subnet to the VPC
+    ec2_vpc_subnet:
+      state: present
+      region: us-east-1
+      vpc_id: vpc-0f488eae7b93f4b10
+      cidr: 10.0.2.0/24
+      map_public: yes      
+      tags:
+        Name: Group_task Public-Subnet2
+      internet_gateway: true
+
+
+  - name: associate subnet to the VPC
+    ec2_vpc_subnet:
+      state: present
+      region: us-east-1
+      vpc_id: vpc-0f488eae7b93f4b10
+      map_public: yes      
+      cidr: 10.0.3.0/24
+      tags:
+        Name: Group_task Public-Subnet3
+      internet_gateway: true
+      route_tables:
+        - subnets:
+            - 10.0.1.0/24
+            - 10.0.2.0/24
+            - 10.0.3.0/24
+          routes:
+            - dest: 0.0.0.0/0
+              gw: igw  
+ 
+
+

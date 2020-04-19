@@ -1,0 +1,33 @@
+---
+- hosts: localhost
+  tasks:
+  - name: associate subnet to the VPC
+    ec2_vpc_subnet:
+      state: present
+      region: us-east-1
+      vpc_id: vpc-0f488eae7b93f4b10
+      cidr: 10.0.11.0/24
+      tags:
+        Name: Group_task Private_Subnet1
+
+
+
+  - name: associate subnet to the VPC
+    ec2_vpc_subnet:
+      state: present
+      region: us-east-1
+      vpc_id: vpc-0f488eae7b93f4b10
+      cidr: 10.0.12.0/24
+      tags:
+        Name: Group_task Private_Subnet2
+
+
+
+  - name: associate subnet to the VPC
+    ec2_vpc_subnet:
+      state: present
+      region: us-east-1
+      vpc_id: vpc-0f488eae7b93f4b10
+      cidr: 10.0.13.0/24
+      tags:
+        Name: Group_task Private_Subnet3

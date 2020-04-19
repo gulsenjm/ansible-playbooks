@@ -1,0 +1,7 @@
+---
+- name: Playbook name
+  hosts: localhost
+  tasks:
+- import_playbook: playbook1.yaml
+- import_playbook: playbook2.yaml  
+- import_playbook: playbook3.yaml
