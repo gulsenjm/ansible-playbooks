@@ -2,11 +2,10 @@
 - name: Group_task
   hosts: localhost
   tasks:
-  - import_playbook:
-  - import_playbook:
-  - import_playbook:
-  - import_playbook:
-  - import_playbook:
-  - import_playbook:
-  - import_playbook:
+  - import_playbook: 1.yaml
+  - import_playbook: 2.yaml
+  - import_playbook: 3.yaml
+  - import_playbook: 4.yaml
+  - import_playbook: 5.yaml
+  - import_playbook: 6.yaml
   
