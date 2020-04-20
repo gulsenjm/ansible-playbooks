@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   tasks:
-    - name: Create Private Subnets
+    - name: Create Private Subnets_1
       ec2_vpc_subnet:
         state: present
         vpc_id: "vpc-id"
@@ -9,14 +9,14 @@
         cidr: 
 
 
-    - name: Create Private Subnets
+    - name: Create Private Subnets_2
       ec2_vpc_subnet:
         state: present
         vpc_id: "vpc-id"
         region: "region"
         cidr: 
 
-    - name: Create Private Subnets
+    - name: Create Private Subnets_3
       ec2_vpc_subnet:
         state: present
         vpc_id: "vpc-id"
