@@ -7,9 +7,7 @@
         vpc_id: "vpc-id"
         region: "region"
         cidr: 
-        resource_tags:
-          Name: "Private-Subnet1"
-      register: private_subnet
+
 
     - name: Create Private Subnets
       ec2_vpc_subnet:
@@ -17,9 +15,6 @@
         vpc_id: "vpc-id"
         region: "region"
         cidr: 
-        resource_tags:
-          Name: "Private-Subnet2"
-      register: private_subnet
 
     - name: Create Private Subnets
       ec2_vpc_subnet:
@@ -27,6 +22,5 @@
         vpc_id: "vpc-id"
         region: "region"
         cidr: 
-        resource_tags:
-          Name: "Private-Subnet3"
-      register: private_subnet
+
+
