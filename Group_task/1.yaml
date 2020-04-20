@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   tasks:
-  - name: create a VPC with dedicated tenancy and a couple of tags
+  - name: create a VPC 
     ec2_vpc_net:
       name: Group_task vpc
       cidr_block: 10.0.0.0/16
