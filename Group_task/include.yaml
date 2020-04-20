@@ -1,0 +1,12 @@
+---
+- name: Group_task
+  hosts: localhost
+  tasks:
+  - import_playbook:
+  - import_playbook:
+  - import_playbook:
+  - import_playbook:
+  - import_playbook:
+  - import_playbook:
+  - import_playbook:
+  

@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks: 
+  - ec2_vpc_route_table:
+      vpc_id: "vpc-08b2d7518b3f65f5a"
+      region: "us-east-1"
+      subnets:
+        - "subnet-017f26bf9d44de526"
+        - "subnet-044a67a57a4b91967"
+        - "subnet-0da9e1d1511454748"
+      routes:
+        - dest: 0.0.0.0/0
+          gateway_id: "igw-092bb3301320abc27"
+      tags:
+        Name: "RT_public"

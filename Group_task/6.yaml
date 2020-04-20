@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Set up NAT-protected route table
+      ec2_vpc_route_table:
+        vpc_id: "vpc-08b2d7518b3f65f5a"
+        region: "us-east-1"
+        subnets:
+          - "subnet-06562ae9a5a7e4b03"
+          - "subnet-044594237d331aa3a"
+          - "subnet-0a86762a6e90fac51"
+        routes:
+          - dest: 0.0.0.0/0
+            gateway_id: "nat-03b264d0d7a7fb8b4"

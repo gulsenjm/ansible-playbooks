@@ -1,0 +1,42 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Create NAT Gateway
+      ec2_vpc_nat_gateway:
+        state: present
+        subnet_id:  "subnet-017f26bf9d44de526"
+        eip_address: 52.202.249.113
+        wait: yes
+        region: "us-east-1"
+      register: nat_gateway
+
+
+    - name: Create Private Subnets
+      ec2_vpc_subnet:
+        state: present
+        vpc_id: "vpc-08b2d7518b3f65f5a"
+        region: "us-east-1"
+        cidr: 10.0.11.0/24
+        resource_tags:
+          Name: "Group_task Private-Subnet1"
+      register: private_subnet
+
+    - name: Create Private Subnets
+      ec2_vpc_subnet:
+        state: present
+        vpc_id: "vpc-08b2d7518b3f65f5a"
+        region: "us-east-1"
+        cidr: 10.0.12.0/24
+        resource_tags:
+          Name: "Group_task Private-Subnet2"
+      register: private_subnet
+
+    - name: Create Private Subnets
+      ec2_vpc_subnet:
+        state: present
+        vpc_id: "vpc-08b2d7518b3f65f5a"
+        region: "us-east-1"
+        cidr: 10.0.13.0/24
+        resource_tags:
+          Name: "Group_task Private-Subnet3"
+      register: private_subnet

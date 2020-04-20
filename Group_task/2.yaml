@@ -1,0 +1,45 @@
+---
+- hosts: localhost
+  tasks:
+  - ec2_vpc_subnet:
+      state: present
+      region: us-east-1
+      vpc_id: vpc-08b2d7518b3f65f5a
+      cidr: 10.0.1.0/24
+      map_public: yes
+      tags:
+        Name: Group_task Public-Subnet1
+
+
+
+  -  ec2_vpc_subnet:
+      state: present
+      region: us-east-1
+      vpc_id: vpc-08b2d7518b3f65f5a
+      cidr: 10.0.2.0/24
+      map_public: yes      
+      tags:
+        Name: Group_task Public-Subnet2
+
+
+
+  -  ec2_vpc_subnet:
+      state: present
+      region: us-east-1
+      vpc_id: vpc-08b2d7518b3f65f5a
+      map_public: yes      
+      cidr: 10.0.3.0/24
+      tags:
+        Name: Group_task Public-Subnet3
+
+       
+  - name: create ec2 vpc internet gateway       
+    # create an internet gateway for the vpc
+    ec2_vpc_igw:
+      vpc_id: "vpc-08b2d7518b3f65f5a"
+      region: "us-east-1"
+      tags:
+        Name: "IGW"
+    register: igw
+ 
+
